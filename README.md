@@ -1,16 +1,57 @@
-# flutter_expanded_widget
+# flutter_expanded_column_widget
 
-A new Flutter project.
+![image](https://github.com/luiscoco/flutter_expanded_column_widget/assets/32194879/d6eebe66-c032-4774-83cc-cfe71668f356)
 
-## Getting Started
+```dart
+import 'package:flutter/material.dart';
 
-This project is a starting point for a Flutter application.
+/// Flutter code sample for [Expanded].
 
-A few resources to get you started if this is your first Flutter project:
+void main() => runApp(const ExpandedApp());
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+class ExpandedApp extends StatelessWidget {
+  const ExpandedApp({super.key});
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Expanded Column Sample'),
+        ),
+        body: const ExpandedExample(),
+      ),
+    );
+  }
+}
+
+class ExpandedExample extends StatelessWidget {
+  const ExpandedExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        children: <Widget>[
+          Container(
+            color: Colors.blue,
+            height: 100,
+            width: 100,
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.amber,
+              width: 100,
+            ),
+          ),
+          Container(
+            color: Colors.blue,
+            height: 100,
+            width: 100,
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
